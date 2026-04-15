@@ -1,0 +1,347 @@
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #1b3a4b;
+    --color-accent: #e07a2f;
+    --color-light: #f5f5f5;
+    --color-white: #ffffff;
+    --color-text: #333333;
+    --color-muted: #666666;
+    --color-error: #c0392b;
+    --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--color-text);
+    line-height: 1.6;
+    background: var(--color-light);
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.logo:hover {
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--color-white);
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    opacity: 0.85;
+    text-decoration: none;
+}
+
+.btn-apply {
+    background: var(--color-accent);
+    padding: 0.45rem 1.1rem;
+    border-radius: 4px;
+}
+
+.btn-apply:hover {
+    opacity: 0.9;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* ===== Hero ===== */
+.hero {
+    background: linear-gradient(135deg, var(--color-primary) 60%, #2d6a8a);
+    color: var(--color-white);
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--color-accent);
+    color: var(--color-white);
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+/* ===== Sections ===== */
+section {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+/* ===== Card Grid ===== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--color-white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+/* ===== About & Contact ===== */
+.about p,
+.contact p {
+    max-width: 800px;
+    margin: 0 auto 0.75rem;
+    text-align: center;
+}
+
+/* ===== Recruitment Hero ===== */
+.recruitment-hero {
+    background: linear-gradient(135deg, var(--color-primary) 60%, #2d6a8a);
+    color: var(--color-white);
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 100%;
+}
+
+.recruitment-hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ===== Form ===== */
+.form-section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--color-white);
+}
+
+legend {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    padding: 0 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.required {
+    color: var(--color-error);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: var(--font-family);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(224, 122, 47, 0.25);
+}
+
+.form-group input.invalid,
+.form-group select.invalid {
+    border-color: var(--color-error);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-top: 0.3rem;
+}
+
+.checkbox-group label {
+    display: inline;
+}
+
+.error-message {
+    color: var(--color-error);
+    font-size: 0.85rem;
+    min-height: 1.2em;
+    display: block;
+}
+
+#application-form .btn-primary {
+    width: 100%;
+    padding: 0.85rem;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+/* ===== Confirmation ===== */
+.confirmation {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.confirmation h2 {
+    color: #27ae60;
+    margin-bottom: 1rem;
+}
+
+.confirmation p {
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--color-primary);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem 2rem;
+        gap: 1rem;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
