@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply — Greenfield University</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Greenfield University</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#courses">Courses</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="recruitment.html" class="btn-apply active">Apply Now</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="recruitment-hero">
+            <h1>Recruitment &amp; Admissions</h1>
+            <p>Complete the form below to begin your journey at Greenfield University.</p>
+        </section>
+
+        <section class="form-section">
+            <form id="application-form" novalidate>
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <div class="form-group">
+                        <label for="first-name">First Name <span class="required">*</span></label>
+                        <input type="text" id="first-name" name="firstName" required>
+                        <span class="error-message" id="first-name-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name">Last Name <span class="required">*</span></label>
+                        <input type="text" id="last-name" name="lastName" required>
+                        <span class="error-message" id="last-name-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <span class="error-message" id="phone-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob">Date of Birth <span class="required">*</span></label>
+                        <input type="date" id="dob" name="dob" required>
+                        <span class="error-message" id="dob-error"></span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Programme Selection</legend>
+
+                    <div class="form-group">
+                        <label for="programme">Desired Programme <span class="required">*</span></label>
+                        <select id="programme" name="programme" required>
+                            <option value="">— Select a programme —</option>
+                            <option value="cs">Computer Science</option>
+                            <option value="ba">Business Administration</option>
+                            <option value="me">Mechanical Engineering</option>
+                            <option value="bs">Biomedical Sciences</option>
+                        </select>
+                        <span class="error-message" id="programme-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="start-term">Start Term <span class="required">*</span></label>
+                        <select id="start-term" name="startTerm" required>
+                            <option value="">— Select a term —</option>
+                            <option value="fall-2026">Fall 2026</option>
+                            <option value="spring-2027">Spring 2027</option>
+                            <option value="fall-2027">Fall 2027</option>
+                        </select>
+                        <span class="error-message" id="start-term-error"></span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Education Background</legend>
+
+                    <div class="form-group">
+                        <label for="high-school">High School / Institution Name <span class="required">*</span></label>
+                        <input type="text" id="high-school" name="highSchool" required>
+                        <span class="error-message" id="high-school-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gpa">GPA (out of 4.0) <span class="required">*</span></label>
+                        <input type="number" id="gpa" name="gpa" min="0" max="4" step="0.01" required>
+                        <span class="error-message" id="gpa-error"></span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Additional Information</legend>
+
+                    <div class="form-group">
+                        <label for="statement">Personal Statement</label>
+                        <textarea id="statement" name="statement" rows="5" placeholder="Tell us about yourself, your goals, and why you want to study at Greenfield University."></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I confirm the information provided is accurate and I agree to the <a href="#" target="_blank">terms and conditions</a>. <span class="required">*</span></label>
+                        <span class="error-message" id="terms-error"></span>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn-primary">Submit Application</button>
+            </form>
+
+            <div id="confirmation" class="confirmation hidden">
+                <h2>Application Submitted!</h2>
+                <p>Thank you, <span id="confirm-name"></span>. Your application for <span id="confirm-programme"></span> has been received. We will contact you at <span id="confirm-email"></span> with next steps.</p>
+                <a href="index.html" class="btn-primary">Return to Home</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Greenfield University. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
